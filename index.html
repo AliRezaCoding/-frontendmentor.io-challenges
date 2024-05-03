@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css">
+
+    <script defer src="script.js"></script>
+
+    <title>Sign Up Message</title>
+  </head>
+  <body>
+    <main>
+      <div class="content">
+        <h2>Stay updated!</h2>
+        <p class="label__updates">Join 60,000+ product managers receiving monthly updates on :</p>
+
+        <ul class="updates">
+          <li>
+            <img src="assests/images/icon-list.svg" />
+            <p>Product discovery and building what matters</p>
+          </li>
+          <li>
+            <img src="assests/images/icon-list.svg" />
+            <p>Measuring to ensure updates are a success</p>
+          </li>
+          <li>
+            <img src="assests/images/icon-list.svg" />
+            <p>And much more!</p>
+          </li>
+        </ul>
+
+        <form class="form__subscribe">
+          <div class="labels">
+            <label for="input__email" class="label__input">Email address</label>
+            <label for="input__email" class="label__input--invalid">Valid email required</label>
+          </div>
+          <input type="text" id="input__email" placeholder="email@company.com" />
+          <button class="btn__submit">Subscribe to monthly newsletter</button>
+        </form>
+      </div>
+      <div class="image">
+        <!-- <img src="assests/images/illustration-sign-up-desktop.svg"> -->
+        <img src="assests/images/illustration-sign-up-mobile.svg">
+      </div>
+    </main>
+  </body>
+</html>
