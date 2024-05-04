@@ -5,17 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="responsive.css" />
 
     <script defer src="script.js"></script>
 
     <title>Sign Up Message</title>
   </head>
   <body>
+    <div class="message__success">
+      <header>
+        <div class="message__icon">
+          <img src="assests/images/icon-success.svg">
+        </div>
+        <h2>Thanks for subscribing!</h2>
+        <p>
+          a confirmation email has been sent to <span class="message__email">ash@loremcompany.com</span>. Please open it and click the button inside to confirm your subscription.
+        </p>
+      </header>
+      <button class="btn btn__message">Dismiss message</button>
+    </div>
     <main>
       <div class="content">
         <h2>Stay updated!</h2>
-        <p class="label__updates">Join 60,000+ product managers receiving monthly updates on :</p>
+        <p class="label__updates">
+          Join 60,000+ product managers receiving monthly updates on :
+        </p>
 
         <ul class="updates">
           <li>
@@ -32,18 +46,31 @@
           </li>
         </ul>
 
-        <form class="form__subscribe">
+        <form class="form form__subscribe">
           <div class="labels">
             <label for="input__email" class="label__input">Email address</label>
-            <label for="input__email" class="label__input--invalid">Valid email required</label>
+            <label for="input__email" class="label__input--invalid"
+              >Valid email required</label
+            >
           </div>
-          <input type="text" id="input__email" placeholder="email@company.com" />
-          <button class="btn__submit">Subscribe to monthly newsletter</button>
+          <input
+            type="email"
+            id="input__email"
+            placeholder="email@company.com"
+          />
+          <button class="btn btn__submit" type="submit">
+            Subscribe to monthly newsletter
+          </button>
         </form>
       </div>
       <div class="image">
         <!-- <img src="assests/images/illustration-sign-up-desktop.svg"> -->
-        <img src="assests/images/illustration-sign-up-mobile.svg">
+        <img
+          src="assests/images/illustration-sign-up-desktop.svg"
+          data-mobile="assests/images/illustration-sign-up-mobile.svg"
+          data-desktop="assests/images/illustration-sign-up-desktop.svg"
+          class="img__illustration"
+        />
       </div>
     </main>
   </body>
