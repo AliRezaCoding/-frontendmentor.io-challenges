@@ -1,46 +1,29 @@
 "use strict";
 
 // ELEMENTS
-
 const formSubscribe = document.querySelector(".form__subscribe");
-const inputEmail = document.querySelector("#input__email");
+const inputEmail = document.querySelector("#input-email");
 
-const labelInvalid = document.querySelector(".label__input--invalid");
+const labelInvalid = document.querySelector(".label__email--invalid");
 
-const imgIllustration = document.querySelector(".img__illustration");
-
-const mainEl = document.querySelector("main");
+const cardEl = document.querySelector(".card");
 const messageEl = document.querySelector(".message__success");
-const btnHideMessage = document.querySelector(".btn__message");
-const messageEmail = document.querySelector(".message__email");
+const btnDismiss = document.querySelector(".btn__dismiss");
+const messageEmail = document.querySelector(".email__message--send-to");
+
 ////////////////////////////////
-
-// IMAGE SETTING
-const setImgURL = () => {
-  const changeImg = () => {
-    imgIllustration.src =
-      window.innerWidth < 769
-        ? imgIllustration.dataset.mobile
-        : imgIllustration.dataset.desktop;
-  };
-
-  window.addEventListener("resize", changeImg);
-
-  changeImg();
-};
-setImgURL();
 
 // HANDLE INPUT VALIDATION
 const renderEmailError = (e) => {
   e?.preventDefault();
 
-  labelInvalid.style.display = "inline";
-  inputEmail.style.borderColor = "var(--color-error)";
+  labelInvalid.classList.remove('hidden');
+  inputEmail.classList.add('input__error');
 };
 
 const removeEmailError = () => {
-  labelInvalid.style.display = "none";
-  inputEmail.style.borderColor = "var(--first-color)";
+  labelInvalid.classList.add('hidden');
+  inputEmail.classList.remove('input__error');
 };
 
 const submitForm = (e) => {
@@ -66,12 +49,12 @@ formSubscribe.addEventListener("submit", submitForm);
 const displayMessage = (eml) => {
   messageEmail.textContent = eml;
 
-  mainEl.style.display = "none";
-  messageEl.style.display = "flex";
+  cardEl.classList.add('hidden');
+  messageEl.classList.remove('hidden');
 };
 const hideMessage = () => {
-  mainEl.style.display = "flex";
-  messageEl.style.display = "none";
+  cardEl.classList.remove('hidden');
+  messageEl.classList.add('hidden');
 };
 
-btnHideMessage.addEventListener("click", hideMessage);
+btnDismiss.addEventListener("click", hideMessage);
